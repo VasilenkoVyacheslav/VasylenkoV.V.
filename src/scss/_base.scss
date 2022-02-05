@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color:rgba(255, 255, 255, 0.6)
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font: 400 16px/1.75 $roboto;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+    cursor: pointer;
+    transition: .5s;
+}
+
+input {
+    outline: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.main {
+    overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row {
+    width: 100%;
+
+    @include screen (768) {
+        flex-direction: column;
+    }
+}
+
+section {
+    padding: 50px 0;
+    position: relative;
+    transform-style: inherit;
+
+    @include screen (600) {
+        padding: 25px 0;
+    }
+
+    &.skills {
+        padding-top: 175px;
+
+        @include screen (768) {
+            padding-top: 112px;
+        }
+
+        @include screen (650) {
+            padding-top: 90px;
+        }
+    }
+}
+
+.section__before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+.section-title {
+    width: 100%;
+    padding-bottom: 50px;
+
+    @include screen (600) {
+        padding-bottom: 25px;
+    }
+
+        h4 {
+            font: 700 40px/1 $raleway;
+            text-align: center;
+            color: $black;
+
+            @include screen (650) {
+                font-size: 32px;
+            }
+        }
+}
+
+h4.text-white,
+.text-white {
+    color: $white;
+}
+
+.col-50 {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    @include screen (768) {
+        width: 100%;
+    }
+
+    &__double-col {
+        width: 98%;
+        border-radius: 5px;
+        background: rgba($white, .1);
+        backdrop-filter: blur(12px);
+        padding: 60px 45px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba($white, .3);
+
+        @include screen (768) {
+            padding: 20px 15px;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+    }
+
+    &__title {
+        font: 700 26px/1.077 $raleway;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 30px;
+
+        @include screen (768) {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        color: $white-half;
+
+        @include screen (768) {
+            text-align: center;
+        }
+
+        a {
+            color: $white-half;
+        }
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}

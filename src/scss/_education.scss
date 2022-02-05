@@ -1,0 +1,52 @@
+.education {
+
+    &:before {
+        background-image: url('../images/education.jpg');
+        box-shadow: inset 0 0 0 200vw rgba($darkblue,.45);
+        background-attachment: fixed;
+        z-index: -2;
+        @extend .section__before;
+    }
+
+    &__box {
+        color: $white;
+        padding: 20px 0;
+        position: relative;
+
+        &:after {
+            content: '';
+            background: rgba(255, 255, 255, .2);
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+            
+            &:after {
+                content: none;
+            }
+        }
+
+        &-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+
+            @include screen (768) {
+                text-align: center;
+            }
+        }
+
+        &-date {
+            color: rgba(255, 255, 255, 0.7);
+
+            @include screen (768) {
+                text-align: center;
+            }
+        }
+    }
+}

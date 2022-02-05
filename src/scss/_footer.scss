@@ -1,0 +1,63 @@
+.footer {
+    background: #222;
+    padding: 60px 0;
+
+    @include screen (768) {
+        padding: 15px 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: center;
+
+        li {
+            padding: 0 20px;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0; 
+                width: 1px;
+                height: 32px;
+                background: $white-half;
+            }
+
+            &:last-child {
+
+                &:after {
+                    content: none;
+                }
+            }
+        }
+
+        img {
+            width: 32px;
+            filter: grayscale(1);
+            transition: .5s;
+
+            &:hover {
+                filter: grayscale(0);
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &__bottom {
+
+        padding-top: 15px;
+        
+        p {
+            text-align: center;
+            font-size: 16px;
+            color: $white-half;
+        }
+    }
+}
